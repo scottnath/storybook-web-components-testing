@@ -6,8 +6,6 @@ const config = {
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
     '@storybook/addon-interactions',
-    '@storybook/addon-coverage',
-    'storybook-addon-mock',
   ],
   framework: {
     name: "@storybook/web-components-vite",
