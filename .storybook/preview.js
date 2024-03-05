@@ -1,3 +1,6 @@
+import { expect } from '@storybook/test';
+global.expect = expect;
+
 /** @type { import('@storybook/web-components').Preview } */
 const preview = {
   parameters: {

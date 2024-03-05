@@ -1,4 +1,6 @@
 import { Button } from './Button';
+import { getElements, ensureElementsStep, mouseInteractionStep, keyboardInteractionStep } from './Button.shared-spec';
+
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 export default {
@@ -19,7 +21,13 @@ export default {
 export const Primary = {
   args: {
     primary: true,
-    label: 'Button',
+    label: 'Primary',
+  },
+  play: async ({ args, canvasElement, step }) => {
+    const elements = await getElements(canvasElement);
+    await ensureElementsStep(elements, args, step);
+    await mouseInteractionStep(elements, args, step);
+    await keyboardInteractionStep(elements, args, step);
   },
 };
 
@@ -27,6 +35,7 @@ export const Secondary = {
   args: {
     label: 'Button',
   },
+  play: Primary.play,
 };
 
 export const Large = {
@@ -34,6 +43,7 @@ export const Large = {
     size: 'large',
     label: 'Button',
   },
+  play: Primary.play,
 };
 
 export const Small = {
@@ -41,4 +51,5 @@ export const Small = {
     size: 'small',
     label: 'Button',
   },
+  play: Primary.play,
 };

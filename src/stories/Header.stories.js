@@ -1,8 +1,14 @@
+import { fn } from '@storybook/test';
+
 import { Header } from './Header';
+import { getElements, ensureElementsStep, mouseInteractionStep, keyboardInteractionStep } from './Header.shared-spec';
+
+const mockOnLogin = fn();
+const mockOnLogout = fn();
+const mockOnCreateAccount = fn();
 
 export default {
   title: 'Example/Header',
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/web-components/vue/writing-docs/autodocs
   tags: ['autodocs'],
   render: (args) => Header(args),
 };
@@ -12,7 +18,23 @@ export const LoggedIn = {
     user: {
       name: 'Jane Doe',
     },
+    onLogin: mockOnLogin,
+    onLogout: mockOnLogout,
+    onCreateAccount: mockOnCreateAccount,
+  },
+  play: async ({ args, canvasElement, step }) => {
+    const elements = await getElements(canvasElement);
+    await ensureElementsStep(elements, args, step);
+    await mouseInteractionStep(elements, args, step);
+    await keyboardInteractionStep(elements, args, step);
   },
 };
 
-export const LoggedOut = {};
+export const LoggedOut = {
+  args: {
+    onLogin: mockOnLogin,
+    onLogout: mockOnLogout,
+    onCreateAccount: mockOnCreateAccount,
+  },
+  play: LoggedIn.play,
+};
