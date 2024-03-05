@@ -1,21 +1,19 @@
-<h1>Lit Latest (Vite | JavaScript)</h1>
+# Storybook web component testing
 
-<p>
-  This is project generated to serve as a reproduction starter for Storybook.
-</p>
+## Initial setup
 
-<a  href="https://stackblitz.com/github/storybookjs/sandboxes/tree/next/lit-vite/default-js/after-storybook?preset=node=">
-  View it in Stackblitz
-</a>
+The initial setup of this repo draws on previous work about Storybook and testing components as well as starting from a generic Storybook setup.
 
-<h3>Testing instructions</h3>
+### Source repo
 
-<p>Install dependencies:</p>
-<pre>
-  yarn
-</pre>
+The original source code is copied from the [Storybook starter for Vite + Lit, Javascript](https://github.com/storybookjs/sandboxes/tree/next/lit-vite/default-js/after-storybook). It uses Storybook 8.
 
-<p>Run Storybook:</p>
-<pre>
-  yarn storybook
-</pre>
+### Shared tests in *.shared-spec.js files
+
+This repo will showcase a web components storybook environment _with testing_. The `shared-spec` files and tests originate from the shared testing examples detailed in the article series [Sharing tests across UI components](https://dev.to/scottnath/series/22727). That series details what shared tests are conceptually and details code to share tests across components and across javascript frameworks.
+
+The initial tests in the :tada: commit were direct copies from that series' codebase.
+
+### Virtual screen reader setup
+
+Integrating the @guidepup/virtual-screen-reader is detailed in [Simple setup: Virtual Screen Reader in Storybook](https://dev.to/scottnath/simple-setup-virtual-screen-reader-in-storybook-2efo)
