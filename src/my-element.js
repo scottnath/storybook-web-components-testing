@@ -31,21 +31,23 @@ export class MyElement extends LitElement {
 
   render() {
     return html`
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src=${viteLogo} class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://lit.dev" target="_blank">
-          <img src=${litLogo} class="logo lit" alt="Lit logo" />
-        </a>
-      </div>
-      <slot></slot>
-      <div class="card">
-        <button @click=${this._onClick} part="button">
-          count is ${this.count}
-        </button>
-      </div>
-      <p class="read-the-docs">${this.docsHint}</p>
+      <section aria-label="My Element">
+        <div>
+          <a href="https://vitejs.dev/in" target="_blank">
+            <img src=${viteLogo} class="logo" alt="Vite logo" />
+          </a>
+          <a href="https://lit.dev" target="_blank">
+            <img src=${litLogo} class="logo lit" alt="Lit logo" />
+          </a>
+        </div>
+        <slot></slot>
+        <div class="card">
+          <button @click=${this._onClick} part="button">
+            count is ${this.count}
+          </button>
+        </div>
+        <p class="read-the-docs">${this.docsHint}</p>
+      </section>
     `
   }
 
