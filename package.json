@@ -28,6 +28,7 @@
     "@storybook/testing-library": "^0.2.2",
     "@storybook/web-components": "^8.0.0-rc.2",
     "@storybook/web-components-vite": "^8.0.0-rc.2",
+    "shadow-dom-testing-library": "^1.11.2",
     "storybook": "^8.0.0-rc.2",
     "vite": "^5.1.5"
   },
