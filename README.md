@@ -1,9 +1,13 @@
-# Storybook web component testing
+# POC: Storybook web component testing
 
 See `Initial Setup` below for information on the shared-tests included in this repo
 
 * [./MyElement.stories.js](./MyElement.stories.js) contains the shadowroot element's stories
 * [./src/MyElement.shared-spec.js](./src/MyElement.shared-spec.js) contains the shared tests used in the interaction tests for the stories
+
+See article for details:
+
+[**Storybook setup: Virtual Screen Reader in Web Components**](https://scottnath.com/blahg/virtual-screen-reader-with-web-components/)
 
 ## Setup to run web component testing in Storybook
 
