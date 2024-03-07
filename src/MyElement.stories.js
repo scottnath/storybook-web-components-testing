@@ -16,6 +16,7 @@ export default {
   title: 'Lit/MyElement',
   component: 'my-element',
   render: (args) => {
+    // `attrGen` generates a string of HTML attributes (see .storybook/preview.js)
     const attributes = attrGen(args);
   
     return `

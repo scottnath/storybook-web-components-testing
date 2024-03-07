@@ -1,3 +1,10 @@
+/**
+ * @fileoverview these are the shared tests for the MyElement component
+ * 
+ * Shared tests are detailed in the series "Sharing tests across UI components" 
+ * @see https://dev.to/scottnath/series/22727
+ */
+
 import { virtual } from '@guidepup/virtual-screen-reader';
 import { userEvent, within } from '@storybook/test';
 import { within as shadowWithin } from 'shadow-dom-testing-library';
@@ -81,8 +88,8 @@ export const ensureScreenRead = async (elements, args) => {
 
   let failsafe = 30;
   // This `while` statement navigates through the component using the 
-  //  virtual screen reader to speak the text whereever the cursor is located.
-  //  It will continue until it reaches the end expected text
+  //  virtual screen reader to speak the text where the cursor is located.
+  //  It will continue until it reaches the last item in the expected array.
   while ((await virtual.lastSpokenPhrase()) !== expected[expected.length - 1] && failsafe > 0) {
     // `.next()` moves the Virtual cursor to the next location.
     await virtual.next();
@@ -126,7 +133,7 @@ export const ensureButtonScreenRead = async (elements, args) => {
 }
 
 /**
- * Uses the hacky-helper, which navigates through a container to find all tabbable nodes,
+ * Uses the hacky-helper `findTabbable`, which navigates through a container to find all tabbable nodes,
  *  and then asserts that the order is correct.
  */
 export const testTabOrder = async (elements, args) => {

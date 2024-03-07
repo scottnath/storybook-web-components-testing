@@ -2,6 +2,9 @@ import { expect } from '@storybook/test';
 
 global.expect = expect;
 
+/**
+ * Generate an attribute string from args
+ */
 global.attrGen = (args) => Object.entries(args)
 .filter(([key, value]) => value)
 .map(([key, value]) => `\n  ${key}="${value}"`)
